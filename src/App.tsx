@@ -53,10 +53,16 @@ function App() {
     setPagina(pagina - 1);
   };
 
+  const setPaginacion = (val: number) => {
+    const indice = (pagina - 1) * numPaginacion;
+    setPagina((indice - (indice % val)) / val + 1);
+    setNumPaginacion(val);
+  };
+
   return (
     <>
       <Cabecera titulo="Pokedex">
-        <MenuDesp cantPag={numPaginacion} fun={setNumPaginacion} />
+        <MenuDesp cantPag={numPaginacion} fun={setPaginacion} />
       </Cabecera>
       <div className={`container bg-body `}>
         <div className={`${cargando ? "opacity-25" : ""}`}>

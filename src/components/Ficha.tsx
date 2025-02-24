@@ -8,6 +8,7 @@ type Props = {
 
 function Ficha({ data }: Props) {
   //console.log(data);
+  //imagne
   let imagen;
   try {
     imagen =
